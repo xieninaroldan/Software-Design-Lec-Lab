@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zion Colors | Book Now</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #f0f0f0;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #005F6B;
+    }
+
+    .label-container {
+        text-align: center;
+    }
+
+    .label {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .rest-day {
+        background-color: #f9f9f9;
+    }
+
+    .time-slots {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .time-slot {
+        margin: 5px;
+    }
+
+    .disabled {
+        pointer-events: none;
+        color: #aaa;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Reservation: Date and Time</h1>
+    <div class="button-container">
+        <button id="prevButton">Previous Month</button>
+        <button id="nextButton">Next Month</button>
+    </div>
+    <div class="label-container">
+        <span class="label" id="monthLabel"></span>
+    </div>
+    <table id="calendar">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Calendar rows will be dynamically added here -->
+        </tbody>
+    </table>
+    <div id="timeSlots">
+</div>
+        
+<script>
+    const calendar = document.getElementById("calendar");
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+    const monthLabel = document.getElementById("monthLabel");
+    const timeSlotsContainer = document.getElementById("timeSlots");
+    let currentMonth = 3; // April is month 3 (0-indexed)
+    let currentYear = 2024;
+    let selectedDate = null;
+
+    function updateCalendar() {
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+        const today = new Date();
+        let dayCounter = 1;
+        let tbody = calendar.querySelector('tbody');
+        tbody.innerHTML = "";
+
+        for (let i = 0; i < 6; i++) {
+            let row = tbody.insertRow();
+            for (let j = 0; j < 7; j++) {
+                let cell = row.insertCell();
+                if (i === 0 && j < firstDay) {
+                    cell.classList.add('disabled');
+                } else if (dayCounter > daysInMonth) {
+                    cell.classList.add('disabled');
+                } else {
+                    cell.textContent = dayCounter;
+                    let currentDate = new Date(currentYear, currentMonth, dayCounter);
+                    if (currentDate < today) {
+                        cell.classList.add('disabled');
+                    } else {
+                        cell.addEventListener('click', () => {
+                            selectDate(currentDate);
+                        });
+                    }
+                    dayCounter++;
+                }
+            }
+        }
+
+        monthLabel.textContent = `${months[currentMonth]} ${currentYear}`;
+    }
+
+    function selectDate(date) {
+    selectedDate = date;
+    updateTimeSlots();
+}
+
+function confirmReservation(date, slot) {
+    const confirmed = confirm(`Do you want to book a reservation for ${date.toLocaleDateString()} at ${slot}?`);
+    if (confirmed) {
+        const personalDetailsForm = document.createElement('form');
+        personalDetailsForm.innerHTML = `
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+            <label for="contactNumber">Contact Number:</label>
+            <input type="text" id="contactNumber" name="contactNumber" required><br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br>
+            <button type="submit">Confirm Reservation</button>
+        `;
+        personalDetailsForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(personalDetailsForm);
+            formData.append("date", date.toISOString().split('T')[0]);
+            formData.append("time_slot", slot);
+            fetch("submit_booking.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Reservation confirmed!");
+                personalDetailsForm.reset();
+            })
+            .catch(error => {
+                alert("An error occurred. Please try again.");
+                console.error(error);
+            });
+        });
+        timeSlotsContainer.innerHTML = "";
+        timeSlotsContainer.appendChild(personalDetailsForm);
+    }
+}
+
+function updateTimeSlots() {
+    if (selectedDate) {
+        timeSlotsContainer.innerHTML = "";
+        let timeSlots = [];
+        if (selectedDate.getDay() >= 4) {
+            timeSlots = ['8AM - 11am', '12PM - 3PM', '4PM - 7PM', '8PM - 11PM'];
+        } else {
+            timeSlots = ['4PM - 7PM', '8PM - 11PM'];
+        }
+
+        timeSlots.forEach(slot => {
+            let button = document.createElement('button');
+            button.textContent = slot;
+            button.classList.add('time-slot');
+            button.addEventListener('click', () => {
+                confirmReservation(selectedDate, slot);
+            });
+            timeSlotsContainer.appendChild(button);
+        });
+    }
+}
+
+    function selectDate(date) {
+        selectedDate = date;
+        updateTimeSlots();
+    }
+
+    prevButton.addEventListener("click", function() {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        updateCalendar();
+    });
+
+    nextButton.addEventListener("click", function() {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        updateCalendar();
+    });
+
+    updateCalendar();
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+//sql
+CREATE DATABASE booking_system;
+USE booking_system;
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE,
+    time_slot VARCHAR(20),
+    name VARCHAR(255),
+    email VARCHAR(255),
+    contact_number VARCHAR(20),
+    address TEXT
+);
+
+
+//java
+const bookingForm = document.getElementById("bookingForm");
+
+bookingForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const formData = new FormData(bookingForm);
+    formData.append("date", selectedDate.toISOString().split('T')[0]);
+    formData.append("time_slot", selectedTimeSlot);
+    fetch("submit_booking.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Booking successful!");
+        bookingForm.reset();
+    })
+    .catch(error => {
+        alert("An error occurred. Please try again.");
+        console.error(error);
+    });
+});
+
+
+//php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "booking_system";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Prepare and bind SQL statement
+$stmt = $conn->prepare("INSERT INTO bookings (date, time_slot, name, email, contact_number, address) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $date, $time_slot, $name, $email, $contact_number, $address);
+
+// Set parameters and execute
+$date = $_POST["date"];
+$time_slot = $_POST["time_slot"];
+$name = $_POST["name"];
+$email = $_POST["email"];
+$contact_number = $_POST["contactNumber"];
+
+// Validate contact number
+if (preg_match("/^\+63[0-9]{10}$/", $contact_number) !== 1) {
+    die("Invalid contact number. Contact number must start with +63 and have 10 digits.");
+}
+
+$address = $_POST["address"];
+
+$stmt->execute();
+
+$stmt->close();
+$conn->close();
+
+echo json_encode(["success" => true]);
+?>
