@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="C:\Users\xienina\Downloads\sdl nail (2)\sdl nail\logo.png">
+    
+    <title>Zion Colors | FAQs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #FDFD96, #F8C8DC); /* Yellow to Pink gradient */
+        }
+        header {
+            background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
+            padding: 20px 0;
+            text-align: center;
+		}
+        header h1 {
+		    font-family: 'Abril Fatface', serif;
+            margin: 0;
+            color: #fff;
+            font-size: 40px;
+			letter-spacing: 2px;
+        }
+        nav {
+            background-color: #ff66a3;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+	
+</head>
+<body>
+    <header>
+        <h1>Zion Colors</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="HOME.html">Home</a></li>
+            <li><a href="ABOUT.html">About</a></li>
+            <li><a href="FAQs.html">FAQs</a></li>
+            <li><a href="SERVICES.html">Services</a></li>
+            <li><a href="BOOKNOW.html">Book Now</a></li>
+        </ul>
+    </nav>
+    <div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Zion Colors. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
