@@ -7,8 +7,8 @@
     
     <title>Zion Colors | About</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
     <style>
         body {
             font-family: Poppins, sans-serif;
@@ -20,13 +20,13 @@
             background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
             padding: 20px 0;
             text-align: center;
-		}
+        }
         header h1 {
-		    font-family: 'Abril Fatface', serif;
+            font-family: 'Abril Fatface', serif;
             margin: 0;
             color: #fff;
             font-size: 40px;
-			letter-spacing: 2px;
+            letter-spacing: 2px;
         }
         nav {
             background-color: #ff66a3;
@@ -53,11 +53,46 @@
             text-align: center;
             color: #fff;
         }
+        .container-about {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-right: 60px;
+        }
+        .photo {
+            width: 30%;
+            margin-left: 150px; /* Adjusted margin to separate from the timeline */
+            margin-top: 50px;
+        }
+        .photo img {
+            width: 100%;
+            height: auto;
+        }
+        .photo p {
+            text-align: center; /* Center align the text */
+            font-size: 16px; /* Adjusted font size */
+            margin-top: 10px; /* Adjusted margin for better spacing */
+        }
+        .text {
+            flex: 1;
+            padding: 100px;
+        }
+        .text h2 {
+            font-family: Spectral, serif;
+            font-size: 40px;
+            color: #ff66a3;
+            margin-bottom: 30px; /* Adjusted margin for better spacing */
+            margin-top: 30px; /* Adjusted margin for better spacing */
+        }
+        .text p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+        }
         .timeline {
             position: relative;
             max-width: 800px;
-            margin: 0 auto;
-			left: 10%;
+            margin-left: 50%;
         }
         .timeline::after {
             content: '';
@@ -74,7 +109,7 @@
             position: relative;
             background-color: inherit;
             width: 50%;
-			margin-left: 40px;
+            margin-left: 40px;
         }
         .container::after {
             content: '';
@@ -90,10 +125,10 @@
         }
         .left {
             left: 0;
-			margin-top: 100px; 
+            margin-top: 100px; 
         }
         .right {
-            left: 50%;
+            right: 0; /* Adjusted to align the right container */
         }
         .left::before {
             content: " ";
@@ -151,37 +186,8 @@
               left: 0%;
           }
         }
-		.photo {
-		    flex: 1;
-			text-align: center; /* Center align the image */
-			width: 30%;
-    		margin-left: 40px; /* Adjusted margin to separate from the timeline */
- 		    margin-top: 50px;
-		}
-		.photo img {
-			width: 100%;
-			height: auto;
-			margin-left: 150px;
-			margin-top: 50px;
-		}
-        .text {
-			flex: 1;
-			padding: 20px;
-		}
-		.text h2 {
-		    font-family: Spectral, serif;
-			font-size: 40px;
-			color: #ff66a3;
-			margin-bottom: 60px;
-			margin-top: 100px;
-		}
-		.text p {
-			font-size: 18px;
-			line-height: 1.5;
-			text-align: justify;
-		}
     </style>
-	
+    
 </head>
 <body>
     <header>
@@ -196,37 +202,39 @@
             <li><a href="BOOKNOW.html">Book Now</a></li>
         </ul>
     </nav>
-	<div class="container-about">
-	<div class="photo">
-		<img src="C:\Users\xienina\Downloads\sdl nail (2)\sdl nail\logo.png" alt="Logo">
-	</div>
-	<div class="text">
-			<h2>GET TO KNOW US!</h2>
-			<h4>2021</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis justo eu purus placerat ultricies. Nullam sit amet fermentum velit, nec feugiat justo. Proin ac risus a magna tincidunt lacinia. Morbi varius tempor libero, eu dapibus velit consequat nec.</p>
-	</div>
-		<div class="timeline">
- 		 <div class="container left">
-   		  <div class="content">
-      		<h2>2020</h2>
-		    <p>Lorem ipsum..</p>
-  		  </div>
-  		 </div>
- 		 <div class="container right">
-  		  <div class="content">
-    		  <h2>2021</h2>
-    		  <p>Lorem ipsum..</p>
-   		  </div>
- 		 </div>
-		 <div class="container left">
-  		  <div class="content">
-    		  <h2>2022</h2>
-    		  <p>Lorem ipsum..</p>
-   		  </div>
-		  <br><br>
- 		 </div>
-		</div>
-	
+    <div class="container-about">
+        <div class="photo">
+            <img src="C:\Users\xienina\Downloads\sdl nail (2)\sdl nail\logo.png" alt="Logo">
+            <p></p> <!-- Added text beside the photo -->
+        </div>
+        <div class="text">
+            <h2>GET TO KNOW US!</h2>
+            <h4>2021</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis justo eu purus placerat ultricies. Nullam sit amet fermentum velit, nec feugiat justo. Proin ac risus a magna tincidunt lacinia. Morbi varius tempor libero, eu dapibus velit consequat nec.</p>
+        </div>
+    </div>
+    <div class="timeline">
+         <div class="container left">
+            <div class="content">
+                <h2>2020</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+         </div>
+         <div class="container right"> <!-- Adjusted to right -->
+            <div class="content">
+                <h2>2021</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+         </div>
+         <div class="container left">
+            <div class="content">
+                <h2>2022</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+            <br><br>
+         </div>
+    </div>
+    
     <footer>
         <p>&copy; 2024 Zion Colors. All rights reserved.</p>
     </footer>
