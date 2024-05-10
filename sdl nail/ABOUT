@@ -81,7 +81,7 @@
             font-family: Spectral, serif;
             font-size: 40px;
             color: #ff66a3;
-            margin-bottom: 30px; /* Adjusted margin for better spacing */
+            margin-bottom: 1px;
             margin-top: 30px; /* Adjusted margin for better spacing */
         }
         .text p {
@@ -92,7 +92,8 @@
         .timeline {
             position: relative;
             max-width: 800px;
-            margin-left: 50%;
+            margin-left: 40%;
+			margin-top: -110px;
         }
         .timeline::after {
             content: '';
@@ -102,7 +103,7 @@
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -3px;
+            margin-left: -1px;
         }
         .container {
             padding: 10px 40px;
@@ -110,6 +111,7 @@
             background-color: inherit;
             width: 50%;
             margin-left: 40px;
+			margin-bottom: 30px;
         }
         .container::after {
             content: '';
@@ -124,12 +126,12 @@
             z-index: 1;
         }
         .left {
-            left: 0;
-            margin-top: 100px; 
+            left: -20px;
+            margin-top: 10px; 
         }
-        .right {
-            right: 0; /* Adjusted to align the right container */
-        }
+		.right {
+  		    right: -345px;
+		}
         .left::before {
             content: " ";
             height: 0;
@@ -154,14 +156,12 @@
             border-width: 10px 10px 10px 0;
             border-color: transparent white transparent transparent;
         }
-        .right::after {
-            left: -16px;
-        }
         .content {
             padding: 20px 30px;
             background-color: white;
             position: relative;
             border-radius: 6px;
+			text-align: justify;
         }
 
         @media screen and (max-width: 600px) {
@@ -179,12 +179,13 @@
               border-width: 10px 10px 10px 0;
               border-color: transparent white transparent transparent;
           }
-          .left::after, .right::after {
+          .left::after, 
+		  .right::after {
               left: 15px;
           }
-          .right {
-              left: 0%;
-          }
+		  .right::after {
+            left: -16px;
+         }
         }
     </style>
     
@@ -209,29 +210,36 @@
         </div>
         <div class="text">
             <h2>GET TO KNOW US!</h2>
-            <h4>2021</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis justo eu purus placerat ultricies. Nullam sit amet fermentum velit, nec feugiat justo. Proin ac risus a magna tincidunt lacinia. Morbi varius tempor libero, eu dapibus velit consequat nec.</p>
-        </div>
+            <p>Meet Zion Bernales, the passionate owner of Zion Colors, a nail salon located in Las Piñas City. Zion enjoys dancing and singing alongside her college studies. She tried with a variety of business before founding Zion Colors, including selling delicious chicken wings and donuts, and even delving in makeup. Starting as home-based during the pandemic in February 2021, Zion Colors gained a lot of popularity on social media for its stylish nail art and warm customer service, winning over many followers and turning into a go-to location for Las Piñas City and nearby recidences for beauty enthusiasts.</p>
+            <br><br>
+			<h2>OUR HISTORY</h2>
+		</div>
     </div>
     <div class="timeline">
          <div class="container left">
             <div class="content">
                 <h2>2020</h2>
-                <p>Lorem ipsum..</p>
+                <p> Zion started planning for Zion Colors. She chose what products and services to offer, worked on creating a logo, and set up social media for promotions.</p>
             </div>
          </div>
          <div class="container right"> <!-- Adjusted to right -->
             <div class="content">
                 <h2>2021</h2>
-                <p>Lorem ipsum..</p>
+                <p>Zion Colors officially opened, offering customizable Press On Nails. </p>
             </div>
          </div>
          <div class="container left">
             <div class="content">
                 <h2>2022</h2>
-                <p>Lorem ipsum..</p>
+                <p>Added home- based Gel Extensions to her list of services. Then later on, rented a studio for client visit together with Finesse Studio.</p>
             </div>
             <br><br>
+         </div>
+		 <div class="container right"> <!-- Adjusted to right -->
+            <div class="content">
+                <h2>2023</h2>
+                <p> Zion Colors continued to grow, serving a wide range of clients, including popular artists like Illest Morena and Demi.</p>
+            </div>
          </div>
     </div>
     
