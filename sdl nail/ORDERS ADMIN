@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png">
+    
+    <title>Zion Colors | Orders</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #FDFD96, #F8C8DC); /* Yellow to Pink gradient */
+        }
+        header {
+            background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Abril Fatface', serif;
+            margin: 0;
+            color: #fff;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+        nav {
+            background-color: #ff66a3;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer {
+            background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Integrated Booking System Calendar Styles */
+        .container-calendar {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            overflow-y: auto; /* Make container scrollable */
+            max-height: 600px; /* Set max height for scrolling */
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #87ceeb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            text-decoration: none;
+            font-size: 16px; /* Bigger font size */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005F6B;
+        }
+        .time-slots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .time-slot {
+            margin: 5px;
+        }
+        .disabled {
+            pointer-events: none;
+            color: #aaa;
+        }
+        /* Add CSS for column layout */
+        .container-dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .dashboard-section {
+            width: 100%;
+            max-width: 800px; /* Adjust max-width as needed */
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .order-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .order-details.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zion Colors</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="HOMEADMIN.html">Home</a></li>
+            <li><a href="ORDERSADMIN.html">Orders</a></li>
+            <li><a href="SERVICESADMIN.html">Services</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Sections -->
+    <div class="container-dashboard">
+        <!-- Orders Calendar Section -->
+        <div class="dashboard-section">
+            <h2>Orders</h2>
+            <div class="container-calendar" id="ordersCalendar"></div>
+            <div class="order-details" id="orderDetails">
+                <!-- Order details will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer remains the same -->
+    <footer>
+        <p>&copy; 2024 Zion Colors. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const ordersCalendar = document.getElementById("ordersCalendar");
+        const orderDetailsContainer = document.getElementById("orderDetails");
+        let selectedDate = null;
+
+        function createCalendar() {
+            const calendarTable = document.createElement("table");
+            const calendarBody = document.createElement("tbody");
+            const currentDate = new Date();
+            const currentMonth = currentDate.getMonth();
+            const currentYear = currentDate.getFullYear();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+
+            let dayCounter = 1;
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement("tr");
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement("td");
+                    if (i === 0 && j < firstDay) {
+                        cell.classList.add('disabled');
+                    } else if (dayCounter > daysInMonth) {
+                        cell.classList.add('disabled');
+                    } else {
+                        cell.textContent = dayCounter;
+                        const currentDate = new Date(currentYear, currentMonth, dayCounter);
+                        cell.addEventListener('click', () => {
+                            handleDateSelection(currentDate);
+                        });
+                        dayCounter++;
+                    }
+                    row.appendChild(cell);
+                }
+                calendarBody.appendChild(row);
+            }
+            calendarTable.appendChild(calendarBody);
+            ordersCalendar.appendChild(calendarTable);
+        }
+
+        function handleDateSelection(date) {
+            selectedDate = date;
+            displayOrderDetails(date);
+        }
+
+        function displayOrderDetails(date) {
+            // Mock function to fetch order details, replace with actual function
+            const orders = getOrdersForDate(date);
+            const orderDetails = document.createElement("div");
+            orderDetails.innerHTML = `<h3>Orders for ${date.toDateString()}</h3>`;
+            orders.forEach(order => {
+                const orderInfo = document.createElement("div");
+                orderInfo.innerHTML = `<p>Customer: ${order.customerName}</p>
+                                       <p>Service: ${order.serviceName}</p>
+                                       <p>Price: ${order.price}</p>
+                                       <p>Booking Details: ${order.bookingDetails}</p>`;
+                orderDetails.appendChild(orderInfo);
+            });
+            orderDetailsContainer.innerHTML = "";
+            orderDetailsContainer.appendChild(orderDetails);
+        }
+
+        // Mock function to get orders for a specific date, replace with actual function
+        function getOrdersForDate(date) {
+            // Assume orders are fetched from the server
+            // Mock data for demonstration
+            const orders = [
+                { customerName: "Customer 1", serviceName: "Service A", price: "$50", bookingDetails: "Details for Service A" },
+                { customerName: "Customer 2", serviceName: "Service B", price: "$60", bookingDetails: "Details for Service B" },
+            ];
+            return orders;
+        }
+
+        // Call function to create the calendar when the page loads
+        createCalendar();
+    </script>
+</body>
+</html>
