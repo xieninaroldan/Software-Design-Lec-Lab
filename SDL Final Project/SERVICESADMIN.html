@@ -412,6 +412,44 @@
     </div>
 </div>
 
+<!-- Add Service Modal -->
+<div class="modal" id="addServiceModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for adding a new service -->
+                <form>
+                    <div class="form-group">
+                        <label for="newServiceName">Service Name:</label>
+                        <input type="text" class="form-control" id="newServiceName">
+                    </div>
+                    <div class="form-group">
+                        <label for="newServicePrice">Service Price:</label>
+                        <input type="text" class="form-control" id="newServicePrice">
+                    </div>
+                    <div class="form-group">
+                        <label for="newServiceDescription">Service Description:</label>
+                        <textarea class="form-control" id="newServiceDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="newServiceImage">Service Image:</label>
+                        <input type="file" class="form-control-file" id="newServiceImage">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="addService()">Add Service</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 		
 		<!-- Button to add a new service -->
