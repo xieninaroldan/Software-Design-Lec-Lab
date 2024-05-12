@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png">
+    
+    <title>Zion Colors | Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #FDFD96, #F8C8DC); /* Yellow to Pink gradient */
+        }
+        header {
+            background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Abril Fatface', serif;
+            margin: 0;
+            color: #fff;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+        nav {
+            background-color: #ff66a3;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+		nav ul li a.active {
+            background-color: #fff; /* Change to your desired active background color */
+            color: #ff66a3; /* Change to your desired active text color */
+        }
+		.container-service {
+            max-width: 900px;
+            margin: 20px auto; /* Add margin to center the content */
+            padding: 20px;
+        }
+        footer {
+            background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .service-img {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            float: left;
+            border-radius: 10%;
+        }
+        .service-description {
+            margin-left: 130px; /* Adjusted margin to align with the service name */
+        }
+        .service-price {
+            margin-left: 130px; /* Adjusted margin to align with the service name */
+            color: #555; /* Adjusted color for better visibility */
+        }
+		.service-checkbox {
+			transform: scale(2); /* Adjust the scale factor as needed */
+			margin-right: 10px; /* Adjust the margin as needed */
+		}
+        #total-price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Zion Colors</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="HOME.html">Home</a></li>
+            <li><a href="ABOUT.html">About</a></li>
+            <li><a href="FAQs.html">FAQs</a></li>
+            <li><a href="SERVICES.html" class="active">Services</a></li>
+            <li><a href="BOOKNOW.html">Book Now</a></li>
+        </ul>
+    </nav>
+    <div class="container-service">
+        <h2><center>Services Offered</center></h2>
+		<br>
+        
+        <h3>Soft Gel Nail Extensions</h3>
+		<br>
+        <ul id="services-list">
+            <li>
+                <input type="checkbox" id="service1" class="service-checkbox" data-price="1000">
+                <label for="service1">
+                    <img class="service-img" src="SGNEPlainSolidColor.jpg" alt="Soft Gel Nail Extensions">
+                    <div class="service-description">
+                        <strong>Plain Solid Color:</strong><br>
+                        Perfect for those who prefer a classic and timeless look.
+                    </div>
+                    <div class="service-price">
+                        <span>₱1000 - ₱1200</span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" id="service2" class="service-checkbox" data-price="1300">
+                <label for="service2">
+                    <img class="service-img" src="SGNEPlainJellyTranslucent.jpg" alt="Soft Gel Nail Extensions">
+                    <div class="service-description">
+                        <strong>Plain Jelly Translucent:</strong><br>
+                        Adds a subtle touch of color with a jelly-like finish.
+                    </div>
+                    <div class="service-price">
+                        <span>₱1300 - ₱1500</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service3" class="service-checkbox" data-price="1600">
+                <label for="service3">
+                    <img class="service-img" src="SGNEAccent.jpg" alt="Soft Gel Nail Extensions">
+                    <div class="service-description">
+                        <strong>Accent:</strong><br>
+                        Choose this option for a bold and eye-catching design.
+                    </div>
+                    <div class="service-price">
+                        <span>₱1600 - ₱1700</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service4" class="service-checkbox" data-price="1800">
+                <label for="service4">
+                    <img class="service-img" src="SGNEMinimal.jpg" alt="Soft Gel Nail Extensions">
+                    <div class="service-description">
+                        <strong>Minimal:</strong><br>
+                        Ideal for those who prefer a simple and understated style.
+                    </div>
+                    <div class="service-price">
+                        <span>₱1300 - ₱1500</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service5" class="service-checkbox" data-price="2100">
+                <label for="service5">
+                    <img class="service-img" src="SGNEExtra.jpg" alt="Soft Gel Nail Extensions">
+                    <div class="service-description">
+                        <strong>Extra:</strong><br>
+                        Get creative with intricate designs and embellishments.
+                    </div>
+                    <div class="service-price">
+                        <span>₱2100 - ₱2300</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service6" class="service-checkbox" data-price="2700">
+                <label for="service6">
+                    <img class="service-img" src="SGNEAdvanceFullSet.jpg" alt="Soft Gel Nail Extensions">
+                    <div class="service-description">
+                        <strong>Advance Full Set:</strong><br>
+                         For the ultimate nail extension experience with advanced techniques.
+
+                    </div>
+                    <div class="service-price">
+                        <span>₱1300 - ₱1500</span>
+                    </div>
+                </label>
+            </li>
+        </ul>
+        
+        <h3>Gel Overlay</h3>
+		<br>
+        <ul>
+            <li>
+                <input type="checkbox" id="service7" class="service-checkbox" data-price="500">
+                <label for="service7">
+                    <img class="service-img" src="GOPlain.jpg" alt="Gel Overlay">
+                    <div class="service-description">
+                        <strong>Plain:</strong><br>
+                        A basic gel overlay to protect and strengthen your natural nails.
+                    </div>
+                    <div class="service-price">
+                        <span>₱500</span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" id="service8" class="service-checkbox" data-price="700">
+                <label for="service8">
+                    <img class="service-img" src="GOAccent.jpg" alt="Gel Overlay">
+                    <div class="service-description">
+                        <strong>Accent:</strong><br>
+                        Add a pop of color or design to your nails with this option.
+                    </div>
+                    <div class="service-price">
+                        <span>₱700</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service9" class="service-checkbox" data-price="1000">
+                <label for="service9">
+                    <img class="service-img" src="GOMinimal.jpg" alt="Gel Overlay">
+                    <div class="service-description">
+                        <strong>Minimal:</strong><br>
+                        Keep it simple yet stylish with a minimalistic gel overlay.
+                    </div>
+                    <div class="service-price">
+                        <span>₱1000</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service10" class="service-checkbox" data-price="1200">
+                <label for="service10">
+                    <img class="service-img" src="GOExtra.jpg" alt="Gel Overlay">
+                    <div class="service-description">
+                        <strong>Extra:</strong><br>
+                        Upgrade to extra thickness for added durability and longevity.
+
+                    </div>
+                    <div class="service-price">
+                        <span>₱1200</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service11" class="service-checkbox" data-price="1500">
+                <label for="service11">
+                    <img class="service-img" src="GOAdvance.jpg" alt="Gel Overlay">
+                    <div class="service-description">
+                        <strong>Advance:</strong><br>
+                        Advanced gel overlay techniques for superior quality and performance.
+                    </div>
+                    <div class="service-price">
+                        <span>₱1500</span>
+                    </div>
+                </label>
+            </li>
+           
+        </ul>
+
+		<h3>Others</h3>
+		<br>
+        <ul id="services-list">
+            <li>
+                <input type="checkbox" id="service12" class="service-checkbox" data-price="250">
+                <label for="service12">
+                    <img class="service-img" src="GORemoval.jpg" alt="Others">
+                    <div class="service-description">
+                        <strong>Gel Overlay Removal:</strong><br>
+                        Safely remove gel overlays without damaging your natural nails.
+                    </div>
+                    <div class="service-price">
+                        <span>₱250</span>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" id="service13" class="service-checkbox" data-price="350">
+                <label for="service13">
+                    <img class="service-img" src="NERemoval.jpg" alt="Others">
+                    <div class="service-description">
+                        <strong>Nail Extension Removal:</strong><br>
+                        Professional removal of nail extensions to maintain nail health.
+                    </div>
+                    <div class="service-price">
+                        <span>₱350</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service14" class="service-checkbox" data-price="350">
+                <label for="service14">
+                    <img class="service-img" src="PressOnPlain.jpg" alt="Others">
+                    <div class="service-description">
+                        <strong>Press On Nails - Plain:</strong><br>
+                        Instantly transform your nails with easy-to-apply press-on nails in a plain finish.
+                    </div>
+                    <div class="service-price">
+                        <span>₱350</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service15" class="service-checkbox" data-price="500">
+                <label for="service15">
+                    <img class="service-img" src="PressOnMinimal.jpg" alt="Others">
+                    <div class="service-description">
+                        <strong>Press On Nails - Minimal:</strong><br>
+                        Minimalistic press-on nails for a quick and chic nail makeover.
+                    </div>
+                    <div class="service-price">
+                        <span>₱500</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service16" class="service-checkbox" data-price="700">
+                <label for="service16">
+                    <img class="service-img" src="PressOnExtra.jpg" alt="Others">
+                    <div class="service-description">
+                        <strong>Press On Nails - Extra:</strong><br>
+                        Get extra length and durability with these press-on nails.
+                    </div>
+                    <div class="service-price">
+                        <span>₱700</span>
+                    </div>
+                </label>
+            </li>
+			<li>
+                <input type="checkbox" id="service17" class="service-checkbox" data-price="1000">
+                <label for="service17">
+                    <img class="service-img" src="PressOnAdvance.jpg" alt="Others">
+                    <div class="service-description">
+                        <strong>Press On Nails - Advance:</strong><br>
+                        Advanced press-on nails for a salon-quality look and feel.
+                    </div>
+                    <div class="service-price">
+                        <span>₱1000</span>
+                    </div>
+                </label>
+            </li>
+        </ul>
+        
+		<br>
+        <button id="calculate-total">Calculate Estimate Total</button> <br><br>
+        <div id="total-price"></div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Zion Colors. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#calculate-total').click(function() {
+                var total = 0;
+                $('.service-checkbox:checked').each(function() {
+                    total += parseInt($(this).data('price'));
+                });
+                $('#total-price').text('Estimated Total Price: ₱' + total);
+            });
+        });
+    </script>
+</body>
+</html>

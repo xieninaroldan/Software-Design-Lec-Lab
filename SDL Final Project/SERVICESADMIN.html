@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png">
+    
+    <title>Zion Colors | Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #FDFD96, #F8C8DC); /* Yellow to Pink gradient */
+        }
+        header {
+            background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Abril Fatface', serif;
+            margin: 0;
+            color: #fff;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+        nav {
+            background-color: #ff66a3;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+		nav ul li a.active {
+            background-color: #fff; /* Change to your desired active background color */
+            color: #ff66a3; /* Change to your desired active text color */
+        }
+        .container-service {
+            max-width: 900px;
+            margin: 20px auto; /* Add margin to center the content */
+            padding: 20px;
+        }
+        footer {
+            background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .service-img {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            float: left;
+            border-radius: 50%;
+        }
+        .service-description {
+            margin-left: 130px; /* Adjusted margin to align with the service name */
+        }
+        .service-price {
+            margin-left: 130px; /* Adjusted margin to align with the service name */
+            color: #555; /* Adjusted color for better visibility */
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Zion Colors</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="HOMEADMIN.html">Home</a></li>
+            <li><a href="ORDERSADMIN.html">Orders</a></li>
+            <li><a href="SERVICESADMIN.html" class="active">Services</a></li>
+        </ul>
+    </nav>
+    <div class="container-service">
+        <h2><center>Services Offered</center></h2>
+        <br>
+		
+		<h3>Soft Gel Nail Extensions</h3>
+		<br>
+        
+        <!-- Service items with edit and delete buttons -->
+        <ul id="service-list">
+            <!-- Service items will be dynamically added here -->
+            <li>
+                <img class="service-img" src="SGNEPlainSolidColor.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Plain Solid Color:</strong><br>
+                    Perfect for those who prefer a classic and timeless look.
+                </div>
+                <div class="service-price">
+                    <span>P1000 - P1200</span>
+                </div> <br>
+                <div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+			
+			<li>
+                <img class="service-img" src="SGNEPlainJellyTranslucent.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Plain Jelly Translucent:</strong><br>
+                    Adds a subtle touch of color with a jelly-like finish.
+                </div>
+                <div class="service-price">
+                    <span>P1300 - P1500</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service2')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service2')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+			<li>
+                <img class="service-img" src="SGNEAccent.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Accent:</strong><br>
+                    Choose this option for a bold and eye-catching design.
+                </div>
+                <div class="service-price">
+                    <span>P1600 - P1700</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+            <li>
+                <img class="service-img" src="SGNEMinimal.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Minimal:</strong><br>
+                    Ideal for those who prefer a simple and understated style.
+                </div>
+                <div class="service-price">
+                    <span>P1800 - P2000</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div> 
+            </li>
+			<br><br><br><br><br><br><br>
+			<li>
+                <img class="service-img" src="SGNEExtra.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Extra:</strong><br>
+                    Get creative with intricate designs and embellishments.
+                </div>
+                <div class="service-price">
+                    <span>P2100 - P2300</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+            <li>
+                <img class="service-img" src="SGNEAdvanceFullSet.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Advance Full Set:</strong><br>
+                    For the ultimate nail extension experience with advanced techniques.
+                </div>
+                <div class="service-price">
+                    <span>P2700 - P3000</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+			
+            <!-- Add other services here -->
+        </ul>
+        
+		<h3>Gel Overlay</h3>
+		<br>
+        <ul>
+            <li>
+                <img class="service-img" src="GOPlain.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Plain:</strong><br>
+                    A basic gel overlay to protect and strengthen your natural nails.
+                </div>
+                <div class="service-price">
+                    <span>P500</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+            <li>
+                <img class="service-img" src="GOAccent.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Accent:</strong><br>
+                    Add a pop of color or design to your nails with this option.
+                </div>
+                <div class="service-price">
+                    <span>P700</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+			<li>
+                <img class="service-img" src="GOMinimal.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Minimal:</strong><br>
+                    Keep it simple yet stylish with a minimalistic gel overlay.
+                </div>
+                <div class="service-price">
+                    <span>P1000</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+            <li>
+                <img class="service-img" src="GOExtra.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Extra:</strong><br>
+                    Upgrade to extra thickness for added durability and longevity.
+                </div>
+                <div class="service-price">
+                    <span>P1200</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+			<li>
+                <img class="service-img" src="GOAdvance.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Advance:</strong><br>
+                    Advanced gel overlay techniques for superior quality and performance.
+                </div>
+                <div class="service-price">
+                    <span>P1500</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+		</ul>
+		
+		<h3>Others</h3>
+		<br>
+        <ul>
+            <li>
+                <img class="service-img" src="GORemoval.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Gel Overlay Removal:</strong><br>
+                    Safely remove gel overlays without damaging your natural nails.
+                </div>
+                <div class="service-price">
+                    <span>P250</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+            <li>
+                <img class="service-img" src="NERemoval.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Nail Extension Removal:</strong><br>
+                    Professional removal of nail extensions to maintain nail health.
+                </div>
+                <div class="service-price">
+                    <span>P350</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+			<li>
+                <img class="service-img" src="PressOnPlain.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Press On Nails - Plain:</strong><br>
+                    Instantly transform your nails with easy-to-apply press-on nails in a plain finish.
+                </div>
+                <div class="service-price">
+                    <span>P350</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+            <li>
+                <img class="service-img" src="PressOnMinimal.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Press On Nails - Minimal:</strong><br>
+                    Minimalistic press-on nails for a quick and chic nail makeover.
+
+                </div>
+                <div class="service-price">
+                    <span>P500</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+			<li>
+                <img class="service-img" src="PressOnExtra.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Press On Nails - Extra:</strong><br>
+                    Get extra length and durability with these press-on nails.
+                </div>
+                <div class="service-price">
+                    <span>P700</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+            <li>
+                <img class="service-img" src="PressOnAdvance.jpg" alt="Soft Gel Nail Extensions">
+                <div class="service-description">
+                    <strong>Press On Nails - Advance:</strong><br>
+                     Advanced press-on nails for a salon-quality look and feel.
+                </div>
+                <div class="service-price">
+                    <span>P1000</span>
+                </div> <br>
+				<div>
+                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+                </div>
+            </li>
+			<br><br><br><br><br><br><br>
+            <!-- Add other service items similarly -->
+        </ul>
+        
+        <!-- Add/Edit/Delete Modal -->
+<div class="modal" id="serviceModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for editing service -->
+                <form>
+                    <div class="form-group">
+                        <label for="serviceName">Service Name:</label>
+                        <input type="text" class="form-control" id="serviceName">
+                    </div>
+                    <div class="form-group">
+                        <label for="servicePrice">Service Price:</label>
+                        <input type="text" class="form-control" id="servicePrice">
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceDescription">Service Description:</label>
+                        <textarea class="form-control" id="serviceDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceImage">Service Image:</label>
+                        <input type="file" class="form-control-file" id="serviceImage">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="saveService()">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+		
+		<!-- Button to add a new service -->
+        <button class="btn btn-success" data-toggle="modal" data-target="#addServiceModal">Add Service</button>
+    </div>
+    <footer>
+        <p>&copy; 2024 Zion Colors. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Your custom JavaScript -->
+    <script>
+        // JavaScript code for handling edit and delete actions
+        
+        // Function to open the modal for editing a service
+        function editService(serviceId) {
+            // Load the edit service modal content via AJAX or construct it dynamically
+            
+            // Example of opening modal using Bootstrap modal API
+            $('#serviceModal').modal('show');
+        }
+        
+        // Function to delete a service
+        function deleteService(serviceId) {
+            // Show a confirmation dialog before deletion
+            if (confirm("Are you sure you want to delete this service?")) {
+                // Logic to delete the service, for example, removing it from the list
+                // This should involve removing the corresponding <li> element from the DOM
+                // You may use jQuery or plain JavaScript for this purpose
+                $('#' + serviceId).remove();
+            }
+        }
+    </script>
+</body>
+</html>
