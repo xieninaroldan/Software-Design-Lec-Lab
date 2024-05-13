@@ -50,6 +50,8 @@
 		nav ul li a.active {
             background-color: #fff; /* Change to your desired active background color */
             color: #ff66a3; /* Change to your desired active text color */
+			border-radius: 15px;
+            padding: 5px;
         }
         .container-service {
             max-width: 900px;
@@ -78,7 +80,6 @@
             color: #555; /* Adjusted color for better visibility */
         }
     </style>
-    
 </head>
 <body>
     <header>
@@ -91,8 +92,11 @@
             <li><a href="SERVICESADMIN.html" class="active">Services</a></li>
         </ul>
     </nav>
+    
     <div class="container-service">
-        <h2><center>Services Offered</center></h2>
+        <!-- Service list -->
+		
+		<h2><center>Services Offered</center></h2>
         <br>
 		
 		<h3>Soft Gel Nail Extensions</h3>
@@ -101,16 +105,20 @@
         <!-- Service items with edit and delete buttons -->
         <ul id="service-list">
             <!-- Service items will be dynamically added here -->
-            <li>
+            <li id="service1">
                 <img class="service-img" src="SGNEPlainSolidColor.jpg" alt="Soft Gel Nail Extensions">
                 <div class="service-description">
                     <strong>Plain Solid Color:</strong><br>
                     Perfect for those who prefer a classic and timeless look.
                 </div>
-                <div class="service-price">
+                <div class="service-price" id="service1-price">
                     <span>P1000 - P1200</span>
-                </div> <br>
+                </div>
+				<p id="service1-promo-price">Promo Price: P900</p>
+				<p id="service1-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
+				<br>
                 <div>
+					<button class="btn btn-info" onclick="addPromo('service1')">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -127,6 +135,7 @@
                     <span>P1300 - P1500</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service2')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service2')">Delete</button>
                 </div>
@@ -142,6 +151,7 @@
                     <span>P1600 - P1700</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -157,6 +167,7 @@
                     <span>P1800 - P2000</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div> 
@@ -172,6 +183,7 @@
                     <span>P2100 - P2300</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -187,6 +199,7 @@
                     <span>P2700 - P3000</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -209,6 +222,7 @@
                     <span>P500</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -224,6 +238,7 @@
                     <span>P700</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -239,6 +254,7 @@
                     <span>P1000</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -254,6 +270,7 @@
                     <span>P1200</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -269,6 +286,7 @@
                     <span>P1500</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -289,6 +307,7 @@
                     <span>P250</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -304,6 +323,7 @@
                     <span>P350</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -319,6 +339,7 @@
                     <span>P350</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -335,6 +356,8 @@
                     <span>P500</span>
                 </div> <br>
 				<div>
+				
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -350,6 +373,7 @@
                     <span>P700</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -365,6 +389,7 @@
                     <span>P1000</span>
                 </div> <br>
 				<div>
+					<button class="btn btn-info" onclick="addPromo()">Add Promo</button>
                     <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
                 </div>
@@ -372,8 +397,9 @@
 			<br><br><br><br><br><br><br>
             <!-- Add other service items similarly -->
         </ul>
-        
-        <!-- Add/Edit/Delete Modal -->
+
+        <!-- Modals for editing, adding service, and adding promo -->
+            <!-- Add/Edit/Delete Modal -->
 <div class="modal" id="serviceModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -451,11 +477,56 @@
     </div>
 </div>
 
+<!-- Add/Edit Promo Modal -->
+<div class="modal" id="promoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add/Edit Promo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for adding/editing a promo -->
+                <form>
+                    <div class="form-group">
+                        <label for="promoName">Promo Name:</label>
+                        <input type="text" class="form-control" id="promoName">
+                    </div>
+                    <div class="form-group">
+                        <label for="promoPrice">Promo Price:</label>
+                        <input type="text" class="form-control" id="promoPrice">
+                    </div>
+                    <div class="form-group">
+                        <label for="promoDescription">Promo Description:</label>
+                        <textarea class="form-control" id="promoDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="promoPeriod">Promo Period:</label>
+                        <input type="text" class="form-control" id="promoPeriod">
+                    </div>
+                    <div class="form-group">
+                        <label for="promoImage">Promo Image:</label>
+                        <input type="file" class="form-control-file" id="promoImage">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="savePromo()">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 		
-		<!-- Button to add a new service -->
+		
+        <!-- Button to add a new service -->
         <button class="btn btn-success" data-toggle="modal" data-target="#addServiceModal">Add Service</button>
     </div>
-    <footer>
+    
+    <!-- Footer and JavaScript libraries -->
+<footer>
         <p>&copy; 2024 Zion Colors. All rights reserved.</p>
     </footer>
 
@@ -463,8 +534,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <!-- Your custom JavaScript -->
+
     <script>
         // JavaScript code for handling edit and delete actions
         
@@ -485,6 +555,64 @@
                 // You may use jQuery or plain JavaScript for this purpose
                 $('#' + serviceId).remove();
             }
+        }
+        
+        // Function to add a new promo
+        function addPromo() {
+            // Clear the form fields
+            $('#promoName').val('');
+            $('#promoPrice').val('');
+            $('#promoDescription').val('');
+            $('#promoPeriod').val('');
+            // Show the promo modal
+            $('#promoModal').modal('show');
+        }
+
+        // Function to save the promo
+        function savePromo() {
+            // Extract promo details from the form
+            var promoName = $('#promoName').val();
+            var promoPrice = $('#promoPrice').val();
+            var promoDescription = $('#promoDescription').val();
+            var promoPeriod = $('#promoPeriod').val();
+            
+            // Additional logic to save the promo, e.g., updating the UI
+            // For now, let's just update the original price with a strikethrough
+            
+            // Get the original price elements
+            var originalPrices = document.querySelectorAll('.service-price');
+            
+            // Loop through each original price and update with strikethrough
+            originalPrices.forEach(function(priceElement) {
+                priceElement.innerHTML = "<del>" + priceElement.innerHTML + "</del>";
+            });
+
+            // Close the promo modal
+            $('#promoModal').modal('hide');
+        }
+
+        // Function to add a promo for a service
+        function addServicePromo(serviceId) {
+            // Get the service element by ID
+            var serviceElement = document.getElementById(serviceId);
+    
+            // Get the original price element
+            var originalPriceElement = serviceElement.querySelector('.service-price');
+    
+            // Get the promo price and period
+            var promoPrice = "P900"; // Example promo price
+            var promoPeriod = "June 1, 2024 - June 30, 2024"; // Example promo period
+    
+            // Create a new span element for the promo price
+            var promoPriceElement = document.createElement('span');
+            promoPriceElement.innerHTML = promoPrice;
+    
+            // Append the promo price element to the service element
+            originalPriceElement.appendChild(promoPriceElement);
+    
+            // Display the promo period
+            document.getElementById(serviceId + '-promo-price').innerText = "Promo Price: " + promoPrice;
+            document.getElementById(serviceId + '-promo-period').innerText = "Promo Period: " + promoPeriod;
         }
     </script>
 </body>
