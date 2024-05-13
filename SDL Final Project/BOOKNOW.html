@@ -50,6 +50,8 @@
 		nav ul li a.active {
             background-color: #fff; /* Change to your desired active background color */
             color: #ff66a3; /* Change to your desired active text color */
+			border-radius: 15px;
+			padding: 5px;
         }
         footer {
             background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
@@ -75,6 +77,12 @@
         h1 {
             text-align: center;
         }
+		h2 {
+		    max-width: 900px;
+            font-family: Spectral, serif;
+            font-size: 40px;
+            color: #ff66a3;
+		}
         table {
             width: 100%;
             border-collapse: collapse;
@@ -135,7 +143,7 @@
     </nav>
     <!-- Integrated Booking System -->
     <div class="container-booking">
-        <h2><center>Reservation: Date and Time</center></h2>
+        <h2><center>Reservation: Date and Time</center></h2><br>
         <div class="button-container">
             <button id="prevButton">&#8249; Prev Month</button>
             <button id="nextButton">Next Month &#8250;</button>
