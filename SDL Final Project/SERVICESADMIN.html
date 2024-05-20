@@ -53,6 +53,16 @@
 			border-radius: 15px;
             padding: 5px;
         }
+		 .container-service h2 {
+            max-width: 900px;
+            font-family: Spectral, serif;
+            font-size: 40px;
+            color: #ff66a3;
+        }
+		.container-service h3 {
+            font-style: italic; 
+			text-decoration: underline;
+        }
         .container-service {
             max-width: 900px;
             margin: 20px auto; /* Add margin to center the content */
@@ -71,6 +81,33 @@
             margin-bottom: 20px;
             float: left;
             border-radius: 50%;
+        }
+		.enlarged-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+        }
+        .enlarged-image img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 300px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 30px;
+            padding: 10px;
         }
         .service-description {
             margin-left: 130px; /* Adjusted margin to align with the service name */
@@ -118,9 +155,9 @@
 				<p id="service1-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
                 <div>
-					<button class="btn btn-info" onclick="addPromo('service1')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service1')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service1')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service1')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service1')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service1')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -138,9 +175,9 @@
 				<p id="service2-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo(service2)">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service2')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service2')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo(service2)">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service2')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service2')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -158,9 +195,9 @@
 				<p id="service3-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service3')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service3')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service3')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service3')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service3')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service3')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -178,9 +215,9 @@
 				<p id="service4-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service4')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service4')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service4')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service4')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service4')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service4')">🗑 Delete</button>
                 </div> 
             </li>
 			<br><br><br>
@@ -198,9 +235,9 @@
 				<p id="service5-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service5')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service5')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service5')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service5')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service5')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service5')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -218,9 +255,9 @@
 				<p id="service6-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service6')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service6')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service6')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service6')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service6')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service6')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -244,9 +281,9 @@
 				<p id="service7-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service7')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service7')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service7')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service7')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service7')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service7')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -264,9 +301,9 @@
 				<p id="service8-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service8')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service8')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service8')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service8')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service8')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service8')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -284,9 +321,9 @@
 				<p id="service9-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service9')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service9')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service9')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service9')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service9')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service9')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -304,9 +341,9 @@
 				<p id="service10-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service10')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service10')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service10')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service10')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service10')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service10')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -324,9 +361,9 @@
 				<p id="service11-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service11')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service11')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service11')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service11')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service11')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service11')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -348,9 +385,9 @@
 				<p id="service12-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service12')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service12')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service12')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service12')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service12')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service12')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -368,9 +405,9 @@
 				<p id="service13-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service13')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service13')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service13')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service13')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service13')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service13')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -388,9 +425,9 @@
 				<p id="service14-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service14')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service14')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service4')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service14')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service14')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service4')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -410,9 +447,9 @@
 				<br>
 				<div>
 				
-					<button class="btn btn-info" onclick="addPromo('service15')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service15')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service15')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service15')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service15')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service15')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -430,9 +467,9 @@
 				<p id="service16-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service16')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service16')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service16')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service16')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service16')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service16')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -450,9 +487,9 @@
 				<p id="service17-promo-period">Promo Period: June 1, 2024 - June 30, 2024</p>
 				<br>
 				<div>
-					<button class="btn btn-info" onclick="addPromo('service17')">Add Promo</button>
-                    <button class="btn btn-primary" onclick="editService('service17')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteService('service17')">Delete</button>
+					<button class="btn btn-info" onclick="addPromo('service17')">+ Add Promo</button>
+                    <button class="btn btn-primary" onclick="editService('service17')">✎ Edit</button>
+                    <button class="btn btn-danger" onclick="deleteService('service17')">🗑 Delete</button>
                 </div>
             </li>
 			<br><br><br>
@@ -531,7 +568,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="addService()">Add Service</button>
+                <button type="button" class="btn btn-primary" onclick="addService()">Save</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -583,7 +620,7 @@
 		
 		
         <!-- Button to add a new service -->
-        <button class="btn btn-success" data-toggle="modal" data-target="#addServiceModal">Add Service</button>
+        <button class="btn btn-success" data-toggle="modal" data-target="#addServiceModal">+ Add Service</button>
     </div>
     
     <!-- Footer and JavaScript libraries -->
