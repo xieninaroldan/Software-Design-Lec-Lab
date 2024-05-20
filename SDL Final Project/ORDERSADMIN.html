@@ -50,6 +50,15 @@
 		nav ul li a.active {
             background-color: #fff; /* Change to your desired active background color */
             color: #ff66a3; /* Change to your desired active text color */
+			border-radius: 15px;
+            padding: 5px;
+        }
+		.container-dashboard h2 {
+            font-family: Spectral, serif;
+            font-size: 40px;
+            color: #ff66a3;
+            margin-bottom: 1px;
+            margin-top: 30px; /* Adjusted margin for better spacing */
         }
         footer {
             background: linear-gradient(to right, #ff66a3, #CF9FFF); /* Fuchsia Pink to Purple gradient */
@@ -154,12 +163,13 @@
             <li><a href="SERVICESADMIN.html">Services</a></li>
         </ul>
     </nav>
-
     <!-- Dashboard Sections -->
     <div class="container-dashboard">
+	    <h2>Orders</h2>
+	    <hr= "width: 200%; height:1px; background: #fff">
+		<hr>
         <!-- Orders Calendar Section -->
         <div class="dashboard-section">
-            <h2>Orders</h2>
             <div class="container-calendar" id="ordersCalendar"></div>
             <div class="order-details" id="orderDetails">
                 <!-- Order details will be displayed here -->
