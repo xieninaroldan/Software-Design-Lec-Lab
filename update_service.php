@@ -24,7 +24,7 @@
             // Update the image_url column with the file extension only
             $imageExtension = pathinfo($_FILES['service_image']['name'], PATHINFO_EXTENSION);
             $sqlUpdateImage = "UPDATE services SET image_url = ? WHERE service_id = ?";
-            $stmtUpdateImage = $connection->prepare($sqlUpdateImage);
+            $stmtUpdateImage = $connector->prepare($sqlUpdateImage);
             $stmtUpdateImage->bind_param('si', $imageExtension, $serviceId);
             if (!$stmtUpdateImage->execute()) {
                 error_log('Error updating image_url column: ' . $stmtUpdateImage->error);
@@ -37,7 +37,7 @@
     
             // Update the image_url column with the file name
             $sqlUpdateImage = "UPDATE services SET image_url = ? WHERE service_id = ?";
-            $stmtUpdateImage = $connection->prepare($sqlUpdateImage);
+            $stmtUpdateImage = $connector->prepare($sqlUpdateImage);
             $stmtUpdateImage->bind_param('si', $serviceImageFileName, $serviceId);
             if (!$stmtUpdateImage->execute()) {
                 error_log('Error updating image_url column: ' . $stmtUpdateImage->error);
@@ -62,7 +62,7 @@
         $params[] = $serviceId;
     
         // Prepare and execute the SQL statement
-        $stmt = $connection->prepare($sql);
+        $stmt = $connector->prepare($sql);
     
         // Bind parameters
         $types = str_repeat('s', count($params));
@@ -84,5 +84,5 @@
     }
     
     // Close the database connection
-    $connection->close();
+    $connector->close();
     ?>
